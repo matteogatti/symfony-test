@@ -1,0 +1,13 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * ImmagineUtente
+ */
+class ImmagineUtente extends Immagine
+{
+    public function getType() {
+        return 'utente';
+    }
+}

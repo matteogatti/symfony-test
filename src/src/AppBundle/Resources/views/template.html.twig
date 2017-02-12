@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/bootstrap/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/AdminLTE.min.css') }}">
+    <!-- AdminLTE Skins -->
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/skins/skin-blue.min.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="{{ path('app_bundle.dashboard.index') }}" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini">R</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">Ricettario</span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- side menu -->
+    {% include('AppBundle::sidemenu.html.twig') %}
+
+    {% block body %}{% endblock %}
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        Ricettario 2017 - {{ "now"|date("Y") }}
+    </footer>
+
+
+</div><!-- ./wrapper -->
+
+<!-- jQuery 2.1.4 -->
+<script src="{{ asset('bundles/app/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="{{ asset('bundles/app/bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('bundles/app/js/app.min.js') }}"></script>
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

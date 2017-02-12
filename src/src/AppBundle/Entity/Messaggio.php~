@@ -1,0 +1,195 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Messaggio
+ */
+class Messaggio
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $msgFrom;
+
+    /**
+     * @var string
+     */
+    private $msgTo;
+
+    /**
+     * @var string
+     */
+    private $body;
+
+    /**
+     * @var string
+     */
+    private $messageId;
+
+    /**
+     * @var string
+     */
+    private $room;
+
+    /**
+     * @var string
+     */
+    private $type;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set msgFrom
+     *
+     * @param string $msgFrom
+     * @return Messaggio
+     */
+    public function setMsgFrom($msgFrom)
+    {
+        $this->msgFrom = $msgFrom;
+
+        return $this;
+    }
+
+    /**
+     * Get msgFrom
+     *
+     * @return string 
+     */
+    public function getMsgFrom()
+    {
+        return $this->msgFrom;
+    }
+
+    /**
+     * Set msgTo
+     *
+     * @param string $msgTo
+     * @return Messaggio
+     */
+    public function setMsgTo($msgTo)
+    {
+        $this->msgTo = $msgTo;
+
+        return $this;
+    }
+
+    /**
+     * Get msgTo
+     *
+     * @return string 
+     */
+    public function getMsgTo()
+    {
+        return $this->msgTo;
+    }
+
+    /**
+     * Set body
+     *
+     * @param string $body
+     * @return Messaggio
+     */
+    public function setBody($body)
+    {
+        $this->body = $body;
+
+        return $this;
+    }
+
+    /**
+     * Get body
+     *
+     * @return string 
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    /**
+     * Set messageId
+     *
+     * @param string $messageId
+     * @return Messaggio
+     */
+    public function setMessageId($messageId)
+    {
+        $this->messageId = $messageId;
+
+        return $this;
+    }
+
+    /**
+     * Get messageId
+     *
+     * @return string 
+     */
+    public function getMessageId()
+    {
+        return $this->messageId;
+    }
+
+    /**
+     * Set room
+     *
+     * @param string $room
+     * @return Messaggio
+     */
+    public function setRoom($room)
+    {
+        $this->room = $room;
+
+        return $this;
+    }
+
+    /**
+     * Get room
+     *
+     * @return string 
+     */
+    public function getRoom()
+    {
+        return $this->room;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return Messaggio
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+}

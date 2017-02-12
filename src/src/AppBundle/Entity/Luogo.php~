@@ -1,0 +1,280 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Luogo
+ */
+class Luogo
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $placeId;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $address;
+
+    /**
+     * @var string
+     */
+    private $city;
+
+    /**
+     * @var string
+     */
+    private $province;
+
+    /**
+     * @var string
+     */
+    private $region;
+
+    /**
+     * @var string
+     */
+    private $state;
+
+    /**
+     * @var string
+     */
+    private $gmapUrl;
+
+    /**
+     * @var string
+     */
+    private $cap;
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set placeId
+     *
+     * @param string $placeId
+     * @return Luogo
+     */
+    public function setPlaceId($placeId)
+    {
+        $this->placeId = $placeId;
+
+        return $this;
+    }
+
+    /**
+     * Get placeId
+     *
+     * @return string 
+     */
+    public function getPlaceId()
+    {
+        return $this->placeId;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Luogo
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return Luogo
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string 
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     * @return Luogo
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set province
+     *
+     * @param string $province
+     * @return Luogo
+     */
+    public function setProvince($province)
+    {
+        $this->province = $province;
+
+        return $this;
+    }
+
+    /**
+     * Get province
+     *
+     * @return string 
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+    /**
+     * Set region
+     *
+     * @param string $region
+     * @return Luogo
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return string 
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * Set state
+     *
+     * @param string $state
+     * @return Luogo
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return string 
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Set gmapUrl
+     *
+     * @param string $gmapUrl
+     * @return Luogo
+     */
+    public function setGmapUrl($gmapUrl)
+    {
+        $this->gmapUrl = $gmapUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get gmapUrl
+     *
+     * @return string 
+     */
+    public function getGmapUrl()
+    {
+        return $this->gmapUrl;
+    }
+
+    /**
+     * Set cap
+     *
+     * @param string $cap
+     * @return Luogo
+     */
+    public function setCap($cap)
+    {
+        $this->cap = $cap;
+
+        return $this;
+    }
+
+    /**
+     * Get cap
+     *
+     * @return string 
+     */
+    public function getCap()
+    {
+        return $this->cap;
+    }
+}

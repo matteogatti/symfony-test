@@ -1,0 +1,57 @@
+---
+- hosts: all
+
+  user: vagrant
+  become: True
+
+  vars:
+    - mysql_root_password: pinguino
+
+  tasks:
+    # provisioning tasks
+    - name: install common package
+      apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
+      with_items:
+        - vim
+        - git
+
+    - name: install LAMP stack
+      apt: name={{ item }} state=latest
+      with_items:
+        - apache2
+        - mysql-server
+        - php7.0
+        - php-pear
+        - php7.0-mysql
+        - php7.0-intl
+        - python-mysqldb
+        - php7.0-curl
+        - phpunit
+        - php7.0-gd
+        - php7.0-json 
+        - php7.0-cgi  
+        - libapache2-mod-php7.0
+
+    # apache2
+    - name: copy virtualhost
+      copy: src=./templates/virtualhosts/deploy.conf
+            dest=/etc/apache2/sites-available/deploy.conf
+            owner=root group=root mode=644 backup=yes
+
+    # php7.0 tuning
+    - name: enable timezone
+      shell: echo "date.timezone = Europe/Rome" >> /etc/php/7.0/cli/php.ini
+      notify: restart apache
+
+    - name: enable tuning operations
+      shell: a2dismod mpm_event && a2enmod mpm_prefork && a2enmod rewrite && a2enmod headers && a2ensite deploy.conf
+      notify: restart apache
+
+    # mysql
+    - name: Change mysql root password
+      mysql_user: name=root password={{ mysql_root_password }} priv=*.*:ALL state=present check_implicit_admin=yes
+      ignore_errors: true
+
+  handlers:
+    - name: restart apache
+      service: name=apache2 state=restarted

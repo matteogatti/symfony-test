@@ -1,0 +1,23 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+            {% set route = app.request.attributes.get('_route') %}
+            <li class="header">Menu</li>
+            <li class="{% if route == 'app_bundle.ricetta.index' %}active{% endif %}">
+                <a href="{{ path('app_bundle.ricetta.index') }}">
+                    <i class="fa fa-birthday-cake" aria-hidden="true"></i><span>Ricette</span>
+                </a>
+            </li>
+            <li class="{% if route == 'app_bundle.ingrediente.index' %}active{% endif %}">
+                <a href="{{ path('app_bundle.ingrediente.index') }}">
+                    <i class="fa fa-list-ul" aria-hidden="true"></i><span>Ingredienti</span>
+                </a>
+            </li>
+        </ul><!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
